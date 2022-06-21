@@ -176,4 +176,20 @@ public class TicketManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    void shouldReturnEmptyArrayWithInvertValidValue() {
+
+        manager.addTicket(ticket1);
+        manager.addTicket(ticket2);
+        manager.addTicket(ticket3);
+        manager.addTicket(ticket4);
+        manager.addTicket(ticket5);
+        manager.addTicket(ticket6);
+
+        Ticket[] actual = manager.findTickets("DME", "NNM");
+        Ticket[] expected = {};
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
